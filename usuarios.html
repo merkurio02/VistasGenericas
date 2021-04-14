@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MerkQ</title>
+
+    <!-- BOOSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container vh-100">
+        <div class="fixed-top">
+            <nav class="navbar navbar-dark bg-dark navbar-expand">
+                <div class="container-fluid justify-content-start">
+                    <span class="navbar-brand mb-0 h1">Usuarios</span>
+                     <div class="nav navbar-nav ">
+                        <a class="nav-link active" data-bs-toggle="collapse" href="#form-registro" role="button">Añadir Usuario</a>
+                    </div> 
+                </div>
+            </nav>
+            <!-- formulario registro usuarioh  -->
+            <div class=" row d-flex justify-content-center">
+                <div id="form-registro" class="col-6 bg-light p-3 border rounded-2 mt-3 collapse">
+                    <h4>Registrar nuevo usuario</h4>
+                    <form>
+                        <div class="mb-3">
+                          <input type="text" class="form-control" id="inpUsuario" placeholder="Usuario">
+                        </div>
+                        <div class="mb-3">
+                          <input type="number" class="form-control" id="inpEdad" placeholder="EDAD">
+                        </div>
+                         <div class="mb-3">
+                            <select class="form-select">
+                                <option selected>Selecciona Cargo</option>
+                                <option value="PROGRAMADOR">PROGRAMADOR</option>
+                                <option value="DISENADOR">DISEÑADOR</option>
+                                <option value="JEFE DE AREA">JEFE DE AREA</option>
+                              </select>
+                         </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#form-registro" >Cancelar</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="tarjetero" class="row d-flex py-1 px-1 mt-5">
+            <div id="tarjeta" class="col-6 col-md-4 col-xl-2 text-center tarjeta">
+                <div class="card mt-3 bg-light">
+                    <div class="row text-start p-2">
+                        <div class="col-6">NOMBRE:</div>
+                        <div class="col-6">PEDRO</div>
+                        <div class="col-6">EDAD:</div>
+                        <div class="col-6">20</div>
+                        <div class="col-6">CARGO:</div>
+                        <div class="col-6">GERENTE:</div>
+                        <div class="col-12 text-center mt-3">
+                            <button class="btn btn-secondary btn-sm"> EDITAR</button>
+                            <button class="btn btn-dark btn-sm"> ELIMINAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+        var tarjeta = document.getElementById("tarjeta").cloneNode(true);
+        var tarjetero = document.getElementById("tarjetero");
+        tarjeta.removeAttribute("id");
+        for (var i = 0; i < 20; i++) {
+            tarjetero.append(tarjeta.cloneNode(true));
+        }
+    </script>
+</body>
+<!-- BOOSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+
+</html>
